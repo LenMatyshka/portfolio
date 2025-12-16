@@ -1,0 +1,320 @@
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tailwind иногда сбрасывает эти стили */
+body {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  background-color: #141a2e;
+  overflow-x: hidden;
+}
+
+/* Звезда */
+.clip-star {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Бесконечная анимация marquee */
+@keyframes marqueeInfinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Стили для вертикального текста HARD SKILLS */
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* Стили для вертикального текста MY WORKS*/
+@media (min-width: 1024px) {
+  .vertical-works-text {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
+  
+  .vertical-stacked-letters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .vertical-stacked-letters span {
+    display: block;
+    line-height: 0.9;
+  }
+}
+
+/* Эффекты кнопок слайдера */
+.btn-prev:hover .btn-text.red {
+  color: #CA2A52 !important;
+  transform: translate(-3px, -3px) !important;
+}
+
+.btn-prev:hover .btn-text.white {
+  color: #000000 !important;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3) !important;
+}
+
+.btn-next:hover .btn-text.blue {
+  color: #797BC9 !important;
+  transform: translate(3px, 3px) !important;
+}
+
+.btn-next:hover .btn-text.white {
+  color: #000000 !important;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Для мобильных - обычный горизонтальный текст MY WORKS */
+@media (max-width: 1023px) {
+  .vertical-works-text {
+    writing-mode: horizontal-tb;
+    transform: rotate(0);
+  }
+}
+
+/* ОСНОВНЫЕ СТИЛИ ДЛЯ HERO СЕКЦИИ */
+@media (min-width: 1024px) {
+  .hero-portfolio {
+    top: -40px;
+    left: 2%;
+    position: absolute;
+  }
+  
+  .hero-web-ui-ux {
+    top: 328px;
+    left: 5%;
+    position: absolute;
+  }
+  
+  .hero-designer {
+    top: 144px;
+    right: -5%;
+    position: absolute;
+  }
+}
+
+/* Планшетная версия */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-portfolio {
+    top: 20px;
+    left: 5%;
+    position: absolute;
+  }
+  
+  .hero-web-ui-ux {
+    top: 40%;
+    left: 10%;
+    position: absolute;
+  }
+  
+  .hero-designer {
+    top: 120px;
+    right: 5%;
+    position: absolute;
+  }
+}
+
+/* Мобильная версия (<768px)*/
+@media (max-width: 767px) {
+  .hero-portfolio {
+    position: relative;
+    text-align: center;
+    top: 0;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 15vw !important;
+    line-height: 1.1;
+  }
+  
+  .hero-web-ui-ux {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 5vw !important;
+    z-index: 20;
+  }
+  
+  /* DESIGNER */
+  .hero-designer {
+    position: relative !important;
+    text-align: right !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin-top: -0.5rem;
+    margin-bottom: 2rem;
+    padding-right: 20px;
+    font-size: 6vw !important;
+    z-index: 20;
+  }
+  
+  /* Контейнер для текста на мобильных */
+  #hero .absolute.w-full.h-full {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Чтобы PORTFOLIO и DESIGNER были в одной линии */
+  .hero-portfolio,
+  .hero-designer {
+    width: 100%;
+    display: block;
+  }
+  
+  /* Делаем DESIGNER меньше на очень маленьких экранах */
+  @media (max-width: 400px) {
+    .hero-designer {
+      font-size: 5.5vw !important;
+      margin-top: -1rem;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .hero-portfolio {
+      font-size: 14vw !important;
+    }
+    
+    .hero-designer {
+      font-size: 5vw !important;
+      margin-top: -1.5rem;
+    }
+  }
+}
+
+/* Для очень маленьких экранов (общие настройки) */
+@media (max-width: 480px) {
+  .hero-portfolio {
+    font-size: 3.5rem !important;
+  }
+  
+  .hero-web-ui-ux span {
+    font-size: 2rem !important;
+  }
+  
+  .hero-designer span {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* СТИЛИ ДЛЯ HARD SKILLS */
+/* Десктопная версия Hard Skills */
+@media (min-width: 768px) {
+  /* Контейнер для вертикального текста HARD SKILLS */
+  .education-skills-section .relative .hidden.md\\:flex {
+    position: relative;
+    width: 130px !important;
+    margin-right: 40px !important;
+  }
+  
+  /* Вертикальный текст HARD SKILLS */
+  .education-skills-section .vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 80px !important;
+    font-weight: 700;
+    margin: 0;
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) rotate(180deg) !important;
+    white-space: nowrap;
+    height: 90%;
+    text-align: center;
+  }
+  
+  /* Фоновое изображение звезды */
+  .education-skills-section .relative .hidden.md\\:flex img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Сетка навыков */
+  .education-skills-section .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px !important;
+    flex-grow: 1;
+    z-index: 2;
+    align-content: center;
+  }
+  
+  /* Иконки навыков */
+  .education-skills-section .icon-box {
+    width: 110px !important;
+    height: 110px !important;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px !important;
+    border-radius: 10px;
+  }
+  
+  .education-skills-section .icon-box img {
+    width: 80% !important;
+    height: 80% !important;
+    object-fit: contain;
+  }
+  
+  /* Названия навыков */
+  .education-skills-section .skill-name {
+    font-size: 20px !important;
+    font-weight: 500;
+  }
+}
+
+/* Мобильная версия Hard Skills */
+@media (max-width: 767px) {
+  .education-skills-section h2.block.md\\:hidden {
+    font-size: 2.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .education-skills-section .grid.grid-cols-2 {
+    gap: 2rem !important;
+  }
+  
+  .education-skills-section .w-20.h-20 {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  .education-skills-section .text-base {
+    font-size: 1rem !important;
+  }
+}
+
+/* Планшетная версия Hard Skills */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .education-skills-section .vertical-text {
+    font-size: 60px !important;
+  }
+  
+  .education-skills-section .skills-grid {
+    gap: 40px !important;
+  }
+  
+  .education-skills-section .icon-box {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  
+  .education-skills-section .skill-name {
+    font-size: 18px !important;
+  }
+}
